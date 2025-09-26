@@ -1,0 +1,311 @@
+/* General */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.oscuro {
+    background-color: #1e1e1e;
+    color: #eee;
+}
+
+header, main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #004499;
+}
+
+button, input[type="submit"], .boton-cerrar, .boton-exportar {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, input[type="submit"]:hover, .boton-cerrar:hover, .boton-exportar:hover {
+    background-color: #004d99;
+}
+
+.boton-cerrar {
+    float: right;
+    margin-left: 10px;
+}
+
+.boton-tema {
+    margin: 5px;
+    width: 50px;
+}
+
+/* ============================= */
+/* Secciones visuales organizadas */
+/* ============================= */
+
+.seccion {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body.oscuro .seccion {
+    background: #2b2b2b;
+    box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+}
+
+.seccion h2 {
+    text-align: left;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #0066cc;
+}
+
+body.oscuro .seccion h2 {
+    border-bottom: 2px solid #4da6ff;
+}
+
+/* Formularios generales */
+form, .formulario-curso {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+input, select {
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+input[type="file"] {
+    padding: 4px;
+}
+
+/* ✅ Estilo en pantallas chicas */
+@media screen and (max-width: 600px) {
+    form, .formulario-curso {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form label, 
+    .formulario-curso label {
+        width: 100%;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    form input, form select,
+    .formulario-curso select, .formulario-curso input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    button, input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+body.oscuro table {
+    background-color: #2a2a2a;
+    border-color: #555;
+}
+
+body.oscuro table th, body.oscuro table td {
+    color: #eee;
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+    table thead {
+        display: none;
+    }
+
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100%;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    table td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        font-weight: bold;
+    }
+}
+
+/* Listas */
+.lista-guias {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-guias li {
+    background: #fafafa;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.lista-guias li:hover {
+    background: #f0f0f0;
+}
+
+body.oscuro .lista-guias li {
+    background: #333;
+    border-color: #555;
+}
+
+body.oscuro .lista-guias li:hover {
+    background: #444;
+}
+
+.lista-guias a {
+    margin-left: 10px;
+}
+
+.acciones {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Gráfico */
+.grafico-container {
+    display: none;
+    max-width: 100%;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+body.oscuro .grafico-container {
+    background: #2b2b2b;
+    box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+}
+
+.grafico-container.visible {
+    display: block;
+}
+/* ============================= */
+/* Animación para gráfico        */
+/* ============================= */
+.grafico-container {
+    display: none;
+    max-width: 100%;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+body.oscuro .grafico-container {
+    background: #2b2b2b;
+    box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+}
+
+.grafico-container.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+.grafico-container {
+    display: none;
+    max-width: 100%;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+    /* 👇 Ajuste para que Chart.js tenga altura */
+    position: relative;
+    height: 400px; /* valor base para PC */
+}
+
+.grafico-container canvas {
+    width: 100% !important;
+    height: 100% !important; /* fuerza a ocupar el contenedor */
+}
+
+/* 📱 Ajuste en móviles */
+@media screen and (max-width: 600px) {
+    .grafico-container {
+        height: 300px; /* menos alto en celulares */
+        padding: 15px;
+    }
+}

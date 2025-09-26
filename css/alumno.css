@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.oscuro {
+    background-color: #1e1e1e;
+    color: #ddd;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-top: 30px;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    background-color: #e6e6e6;
+    padding: 12px 16px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 👈 permite que el contenido baje en móviles */
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+li a {
+    text-decoration: none;
+    padding: 6px 12px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+li a:hover {
+    background-color: #0056b3;
+}
+
+.oscuro li {
+    background-color: #2b2b2b;
+}
+
+.oscuro li a {
+    background-color: #2980b9;
+}
+
+.oscuro li a:hover {
+    background-color: #1c5d89;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+.oscuro table, .oscuro th, .oscuro td {
+    border-color: #555;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color: #ddd;
+}
+
+.oscuro th {
+    background-color: #333;
+}
+
+.boton-tema {
+    margin-top: 5px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.2s;
+    display: flex;
+    padding: 3px;
+    background-color: #a00000;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;    
+}
+
+.boton-tema:hover {
+    transform: scale(1.1);
+}
+
+.boton-cerrar {
+    display: block;
+    margin: 30px auto 0;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 200px;
+    font-size: 1.2rem;
+}
+
+.boton-cerrar:hover {
+    background-color: #a00000;
+}
+
+.oscuro .boton-cerrar {
+    background-color: #e74c3c;
+}
+
+.oscuro .boton-cerrar:hover {
+    background-color: #c0392b;
+}
+
+.acciones {
+    text-align: center;
+    margin-top: 40px;
+}
+
+ul li strong {
+    margin-left: 10px;
+}
+
+.oscuro table tr:hover {
+    background-color: #2e2e2e;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 📱 RESPONSIVE */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    li {
+        flex-direction: column; /* apila el contenido */
+        align-items: flex-start;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto; /* 👈 scroll horizontal en móviles */
+        white-space: nowrap;
+    }
+
+    th, td {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .boton-cerrar {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    li a {
+        width: 100%;
+        text-align: center;
+    }
+
+    th, td {
+        font-size: 0.8rem;
+    }
+}
+/* 🔧 Fix botones de descarga */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+li a {
+    flex-shrink: 0;          /* evita que se estire */
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* 📱 En móviles */
+@media screen and (max-width: 600px) {
+    li {
+        flex-direction: column;   /* texto arriba */
+        align-items: flex-start;  /* alineado a la izquierda */
+    }
+
+    li a {
+        align-self: flex-end;     /* botón a la derecha */
+        width: auto;              /* que no ocupe 100% */
+        margin-top: 6px;
+    }
+}

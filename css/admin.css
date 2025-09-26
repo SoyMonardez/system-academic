@@ -1,0 +1,265 @@
+/* --------------------
+   Estilos base (ya los tienes)
+-------------------- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.oscuro {
+    background-color: #1e1e1e;
+    color: #ddd;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.oscuro form {
+    background-color: #2a2a2a;
+}
+
+input, select, button {
+    display: block;
+    margin: 8px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.oscuro input, .oscuro select {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    width: auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.boton-cerrar {
+    background-color: #cc0000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    float: right;
+}
+
+.boton-cerrar:hover {
+    background-color: #a00000;
+}
+
+/* --------------------
+   Tablas
+-------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.oscuro th, .oscuro td {
+    border-color: #666;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+.oscuro th {
+    background-color: #0056b3;
+}
+
+/* --------------------
+   Buscador
+-------------------- */
+.buscador-form {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.buscador-form input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 200px;
+}
+
+.buscador-form button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.buscador-form button:hover {
+    background-color: #0056b3;
+}
+
+.oscuro .buscador-form input[type="text"] {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+/* --------------------
+   💡 Responsive
+-------------------- */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    /* Formularios */
+    form {
+        padding: 10px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Tablas con scroll */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    /* Botón cerrar sesión más grande */
+    .boton-cerrar {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Buscador compacto */
+    .buscador-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buscador-form input[type="text"],
+    .buscador-form button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    th, td {
+        font-size: 12px;
+    }
+
+    button, .boton-cerrar {
+        font-size: 14px;
+        padding: 8px;
+        width: 100px;
+    }
+}
+.profesor-cursos {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.profesor-cursos h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #00bfff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.cursos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.curso-badge {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.curso-badge:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
